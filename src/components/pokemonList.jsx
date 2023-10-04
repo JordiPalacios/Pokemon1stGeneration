@@ -1,23 +1,17 @@
 import Pokemon from "./pokemon.jsx";
-
-// Creo que aqui debo hacer un fetch para cargar todos los pokemons de una
-const pokemonList = [
-    {
-        "name": "Bulbasaur"
-    },
-
-    {
-        "name": "Charizard"
-    },
-
-    {
-        "name": "Blastoise"
-    }
-];
+import responsePokemonName from "../mocks/resultsPokemonsName.json"
 
 function PokemonList() {
+    const pokemons = responsePokemonName.results
+    const hasPokemons = pokemons?.length > 0
     return ( 
-        pokemonList.map(pokemon => <Pokemon {...pokemon}></Pokemon>)
+        pokemons.map(
+            pokemon => 
+            <Pokemon 
+                {...pokemon} 
+                image={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name.toLowerCase()}.gif`}>
+            </Pokemon>
+        )
      );
 }
 

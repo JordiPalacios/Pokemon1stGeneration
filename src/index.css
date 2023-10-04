@@ -32,6 +32,25 @@
     transform: scale(1.1);
   }
 
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+
   .pokemonSquare {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

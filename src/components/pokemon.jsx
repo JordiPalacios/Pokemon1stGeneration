@@ -1,9 +1,8 @@
-function Pokemon({name}) {
-
+function Pokemon({name, image}) {
     return ( 
     <>
         <button>
-            <img align="center" src="src\assets\img\charizard.png"></img>
+            <img align="center" src={image}></img>
             <h3> {name} </h3>
         </button>
     </> 
