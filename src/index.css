@@ -23,8 +23,8 @@
     background: var(--white-bg);
     color: var(--dark-bg);
     transform: scale(1);
-    transition: background .5s ease-in-out, color .5s ease-in-out,
-    transform .5s ease-in-out, transform .5s ease-in-out;
+    transition: background .3s ease-in-out, background .3s ease-in-out,
+    transform .3s ease-in-out, transform .3s ease-in-out;
   }
 
   button:hover {
@@ -49,6 +49,23 @@
     display: flex;
     justify-content: center;
     margin: 10px;
+  }
+
+  .form input {
+    background-color: var(--white-bg);
+    color: var(--dark-bg);
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .form button {
+    border-radius: 10%;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .form button:hover {
+    transform: scale(1.05);
   }
 
   .pokemonSquare {

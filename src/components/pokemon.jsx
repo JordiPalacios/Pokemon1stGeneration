@@ -1,4 +1,4 @@
-function Pokemon({name, image}) {
+function Pokemon({image, name}) {
     return ( 
     <>
         <button>
