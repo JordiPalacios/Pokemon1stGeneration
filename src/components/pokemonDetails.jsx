@@ -1,13 +1,13 @@
-function PokemonDetails(image, name, id, height, habilities) {
+function PokemonDetails(image, name, id, height, abilities) {
     return ( 
         <>
             <button>X</button>
-            <img src={image} alt="PokemonName" />
-            <h3>{name}</h3>
+            {/* <img src={image} alt="PokemonName" /> */}
+            {/* <h3>{name}</h3> */}
             <li>
                 <ul>ID: {id}</ul>
                 <ul>Height: {height}</ul>
-                <ul>Habilities {habilities}</ul>
+                <ul>Habilities {abilities}</ul>
             </li>
 
         </>

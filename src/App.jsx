@@ -2,6 +2,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import NotFound from './components/notFound'
 import PokemonList from './components/pokemonList.jsx'
+import PokemonDetailsPage from './components/pokemonDetailsPage'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <main>
           <section className="pokemonSquare">
             <PokemonList />
+            <PokemonDetailsPage />
           </section>
         </main>
       </div>
