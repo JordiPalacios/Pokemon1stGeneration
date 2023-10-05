@@ -1,5 +1,7 @@
+import { useState } from 'react'
+import Pokemon from '../components/pokemon'
+import PokemonList from '../components/pokemonList'
 import ResposeDetailsPokemon from '../mocks/resultsPokemonDetails.json'
-import { useNavigate } from "react-router-dom"
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
 //     -Guardamos la info del nombre en una variable para pasarsela a la img y name
@@ -11,10 +13,9 @@ function PokemonDetailsPage() {
     const pokemonDetailsHeight = ResposeDetailsPokemon.height
     const pokemonDetailsAbilities = ResposeDetailsPokemon.abilities
 
-    const navegate = useNavigate();
-
     const back = () => {
-        navegate('/pokemon');
+        // navegate('/pokemon');
+        console.log(pokemonName);
     }
 
     return ( 
@@ -23,7 +24,7 @@ function PokemonDetailsPage() {
             onClick={back}>
                 X
             </button>
-            <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="pokemonImage" />
+            <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif`} alt="pokemonImage" />
             <h3>Charizard</h3>
             <div className="detailsContainer">
                 <ul>

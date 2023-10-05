@@ -7,14 +7,10 @@ function Pokemon({image, name}) {
         navegate(`/pokemon/${name}`);
     }
     return ( 
-    <>
-        <button
-         onClick={pokemonName}
-        >
+        <button onClick={pokemonName}>
             <img align="center" src={image}></img>
             <h3> {name} </h3>
         </button>
-    </> 
     );
 }
 

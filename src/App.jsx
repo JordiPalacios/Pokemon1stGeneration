@@ -1,15 +1,27 @@
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import NotFound from './components/notFound'
+import { Link, Route, Routes } from 'react-router-dom'
+import NotFound from './notFound'
 import Header from './shared/header'
-import Main from './shared/main'
+import PokemonDetailsPage from './shared/pokemonDetailsPage'
+import PokemonList from './components/pokemonList'
+import PokemonDisplay from './shared/pokemonDisplay'
+import PokemonFeatures from './shared/pokemonFeatures'
 
 function App() {
   return (
     <>
-      <div className='mainPage'>
+      {/* <Route path='/'>
         <Header />
-        <Main />
+      </Route>
+      <Route path='/pokemon'>
+        <PokemonPage />
+      </Route> */}
+      <div className='mainPage'>
+          <Header />
+          <main>
+            <PokemonDisplay />
+            <PokemonFeatures />
+          </main>
       </div>
     </>
   )
