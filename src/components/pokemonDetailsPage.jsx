@@ -1,5 +1,5 @@
-import PokemonDetails from "./pokemonDetails"
 import ResposeDetailsPokemon from '../mocks/resultsPokemonDetails.json'
+import { useNavigate } from "react-router-dom"
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
 //     -Guardamos la info del nombre en una variable para pasarsela a la img y name
@@ -11,21 +11,46 @@ function PokemonDetailsPage() {
     const pokemonDetailsHeight = ResposeDetailsPokemon.height
     const pokemonDetailsAbilities = ResposeDetailsPokemon.abilities
 
+    const navegate = useNavigate();
+
+    const back = () => {
+        navegate('/pokemon');
+    }
+
     return ( 
-        <>  
+        <div className="pokemonDetails">  
+            <button
+            onClick={back}>
+                X
+            </button>
             <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="pokemonImage" />
-            <p>Charizard</p>
-            <p>Id: {pokemonDetailsId}</p>
-            <p>Type: {pokemonDetailsType[0].type.name}</p>
-            <p>Height: {pokemonDetailsHeight}</p>
-            <p> Habilities:
+            <h3>Charizard</h3>
+            <div className="detailsContainer">
                 <ul>
-                    {pokemonDetailsAbilities.map(details => 
-                        <p>{details.ability.name}</p>
-                        ) }
+                    <h4>Id:&nbsp;&nbsp;</h4>
+                    <p>{pokemonDetailsId}</p>
                 </ul>
-            </p>
-        </>
+                <ul>
+                    <h4>Type:&nbsp;&nbsp;</h4>
+                    <p>{pokemonDetailsType[0].type.name}</p>
+                </ul>
+                <ul>
+                    <h4>Height:&nbsp;&nbsp;</h4>
+                    <p>{pokemonDetailsHeight}</p>
+                </ul>
+                <ul>
+                    <div>
+                        <h4>Habilities:</h4>
+                        <p>
+                            {pokemonDetailsAbilities.map(details => 
+                                <li>{details.ability.name}</li>
+                                ) }
+                        </p>
+                     </div>
+                    
+                </ul>
+            </div>
+        </div>
      );
 }
 

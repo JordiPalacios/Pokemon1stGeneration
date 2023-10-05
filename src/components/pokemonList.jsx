@@ -8,7 +8,7 @@ function PokemonList() {
         pokemons.map(
             pokemon => 
             <Pokemon 
-                {...pokemon} 
+                name={pokemon.name}
                 image={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name.toLowerCase()}.gif`}
                 >
             </Pokemon>
