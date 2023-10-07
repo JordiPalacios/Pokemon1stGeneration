@@ -1,31 +1,32 @@
-import { useState } from 'react'
-import Pokemon from '../components/pokemon'
-import PokemonList from '../components/pokemonList'
+import navigatePokemonName from '../components/useNavigate'
+import usePokemonName from '../getInformation/getFirstName'
 import ResposeDetailsPokemon from '../mocks/resultsPokemonDetails.json'
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
 //     -Guardamos la info del nombre en una variable para pasarsela a la img y name
 //     -La demas info la sacamos del link extraido
-
 function PokemonDetailsPage() {
     const pokemonDetailsId = ResposeDetailsPokemon.id
     const pokemonDetailsType = ResposeDetailsPokemon.types
     const pokemonDetailsHeight = ResposeDetailsPokemon.height
     const pokemonDetailsAbilities = ResposeDetailsPokemon.abilities
 
-    const back = () => {
-        // navegate('/pokemon');
-        console.log(pokemonName);
-    }
+    const {dataPokemonName} = usePokemonName();
+    const selectedPokemon = dataPokemonName[0] || {};
+    const navegate = navigatePokemonName(selectedPokemon.name);
 
+    const back = () => {
+        console.log(selectedPokemon.name);
+    }
+    
     return ( 
-        <div className="pokemonDetails">  
+        <div className="pokemonDetails"> 
             <button
             onClick={back}>
                 X
             </button>
-            <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif`} alt="pokemonImage" />
-            <h3>Charizard</h3>
+            <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${selectedPokemon.name}.gif`} alt="pokemonImage" />
+            <h3>{selectedPokemon.name}</h3>
             <div className="detailsContainer">
                 <ul>
                     <h4>Id:&nbsp;&nbsp;</h4>

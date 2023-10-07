@@ -1,19 +1,20 @@
 import Pokemon from "./pokemon.jsx";
-import responsePokemonName from "../mocks/resultsPokemonsName.json"
+import usePokemonName from "../getInformation/getFirstName.jsx";
 
 function PokemonList() {
-    const pokemons = responsePokemonName.results
+    const {dataPokemonName} = usePokemonName();
 
     return ( 
-        pokemons.map(
-            pokemon => 
-            <Pokemon 
-                name={pokemon.name}
-                image={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name.toLowerCase()}.gif`}
-                >
-            </Pokemon>
-        )
-     );
+        <>
+            {dataPokemonName.map((pokemon) => (
+                <Pokemon
+                    key={pokemon.name}
+                    name={pokemon.name}
+                    image={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}
+            />
+            ))}
+        </>
+    );
 }
 
 export default PokemonList;
