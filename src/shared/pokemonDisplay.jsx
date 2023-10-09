@@ -1,4 +1,4 @@
-import PokemonList from "../components/pokemonList";
+import PokemonList from "./pokemonsGeneral/pokemonList";
 
 function PokemonDisplay() {
     return ( 

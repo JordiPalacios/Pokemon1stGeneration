@@ -1,5 +1,5 @@
 import Pokemon from "./pokemon.jsx";
-import usePokemonName from "../getInformation/getFirstName.jsx";
+import usePokemonName from "../../getInformation/getFirstName.jsx";
 
 function PokemonList() {
     const {dataPokemonName} = usePokemonName();

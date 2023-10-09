@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import navigatePokemonName from "./useNavigate";
-import { usePokemon } from "../shared/pokemonContext";
+import { useEffect } from "react";
+import navigatePokemonName from "../../components/useNavigate";
+import { usePokemon } from "../../components/hooks/pokemonContext";
 
 function Pokemon({ image, name }) {
   const navegate = navigatePokemonName(name);

@@ -1,13 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { usePokemon } from "./pokemonContext";
 
 const PokemonDetailsContext = createContext();
 
 export const usePokemonDetailsContext = () => useContext(PokemonDetailsContext);
 
 export function PokemonDetailsProvider({ children }) {
-  const [dataPokemonDetails, setDataPokemonDetails] = useState([]);
-  const [loadingPokemonDetails, setLoadingPokemonDetails] = useState(true);
-  const [errorPokemonDetails, setErrorPokemonDetails] = useState(null);
+    const { pokemonName } = usePokemon();
+    const [dataPokemonDetails, setDataPokemonDetails] = useState([]);
+    const [loadingPokemonDetails, setLoadingPokemonDetails] = useState(true);
+    const [errorPokemonDetails, setErrorPokemonDetails] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +28,7 @@ export function PokemonDetailsProvider({ children }) {
     };
 
     fetchData();
-  }, []);
+  }, [pokemonName]);
 
   return (
     <PokemonDetailsContext.Provider value={{ dataPokemonDetails, loadingPokemonDetails, errorPokemonDetails }}>

@@ -2,7 +2,7 @@ import './App.css'
 import { Link, Route, Routes } from 'react-router-dom'
 import Header from './shared/header'
 import PokemonDisplay from './shared/pokemonDisplay'
-import PokemonFeatures from './components/pokemonFeatures'
+import PokemonFeatures from './shared/pokemonDetails/pokemonFeatures'
 
 function App() {
 

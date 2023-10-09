@@ -1,24 +1,22 @@
-import usePokemonDetails from '../getInformation/getPokemonDetails'
-import ResposeDetailsPokemon from '../mocks/resultsPokemonDetails.json'
-import { usePokemon } from './pokemonContext'
+import { usePokemon } from '../../components/hooks/pokemonContext'
+import { usePokemonDetailsContext } from '../../components/hooks/pokemonDetailsContext'
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
 //     -Guardamos la info del nombre en una variable para pasarsela a la img y name
 //     -La demas info la sacamos del link extraido
 function PokemonDetailsPage() {
-    const {dataPokemonDetails} = usePokemonDetails();
-    const pokemonDetailsId = ResposeDetailsPokemon.id
-    const pokemonDetailsType = ResposeDetailsPokemon.types
-    const pokemonDetailsHeight = ResposeDetailsPokemon.height
-    const pokemonDetailsAbilities = ResposeDetailsPokemon.abilities
+    const { dataPokemonDetails } = usePokemonDetailsContext();
+    const pokemonId = dataPokemonDetails ? dataPokemonDetails.id : null;
+    // const pokemonType = dataPokemonDetails ? dataPokemonDetails.types[0].type.name : null;
+    const pokemonHeight = dataPokemonDetails ? dataPokemonDetails.height : null;
 
-    const {selectedPokemon, pokemonName} = usePokemon();
+    const {pokemonName} = usePokemon();
 
 
     const back = () => {
         console.log(pokemonName, dataPokemonDetails);
     }
-    
+
     return ( 
         <div className="pokemonDetails"> 
             <button
@@ -30,26 +28,25 @@ function PokemonDetailsPage() {
             <div className="detailsContainer">
                 <ul>
                     <h4>Id:&nbsp;&nbsp;</h4>
-                    <p>{dataPokemonDetails.id}</p>
+                    <p>{pokemonId}</p>
                 </ul>
                 <ul>
                     <h4>Type:&nbsp;&nbsp;</h4>
-                    <p>{pokemonDetailsType[0].type.name}</p>
+                    {/* <p>{pokemonType}</p> */}
                 </ul>
                 <ul>
                     <h4>Height:&nbsp;&nbsp;</h4>
-                    <p>{pokemonDetailsHeight}</p>
+                    <p>{pokemonHeight}</p>
                 </ul>
                 <ul>
                     <div>
                         <h4>Habilities:</h4>
-                        <p>
-                            {pokemonDetailsAbilities.map(details => 
-                                <li>{details.ability.name}</li>
-                                ) }
-                        </p>
+                        {/* <p>
+                            {dataPokemonDetails.abilities.map(details =>
+                                <li key={details.ability.name}>{details.ability.name}</li>
+                            ) }
+                        </p> */}
                      </div>
-                    
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import PokemonDetailsPage from "../shared/pokemonDetailsPage";
+import PokemonDetailsPage from "./pokemonDetailsPage";
 
 function PokemonFeatures() {
     return ( 
