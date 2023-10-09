@@ -1,19 +1,33 @@
+import { useState, useEffect } from "react";
 import navigatePokemonName from "./useNavigate";
+import { usePokemon } from "../shared/pokemonContext";
 
+function Pokemon({ image, name }) {
+  const navegate = navigatePokemonName(name);
+  const { pokemonName, setPokemonName, selectedPokemon, setSelectedPokemon } = usePokemon();
 
-function Pokemon({image, name}) {
-    // const navegate = useNavigate();
-    const navegate = navigatePokemonName(name);
+  useEffect(() => {
+    console.log(pokemonName);
+  }, [pokemonName]);
 
-    // const pokemonName = () => {
-    //     navegate(`/pokemon/${name}`);
-    // }
-    return ( 
-        <button onClick={navegate}>
-            <img align="center" src={image}></img>
-            <h3> {name} </h3>
-        </button>
-    );
+  function handleClick() {
+    if (selectedPokemon === name) {
+        setSelectedPokemon(null);
+    } else {
+        setPokemonName(name);
+        setSelectedPokemon(name);
+        navegate();
+    }
+}
+
+const isSelected = selectedPokemon === name;
+
+  return (
+    <button onClick={handleClick}>
+      <img align="center" src={image} alt={name} />
+      <h3>{name}</h3>
+    </button>
+  );
 }
 
 export default Pokemon;

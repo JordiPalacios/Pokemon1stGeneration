@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
-import { usePokemon } from "../shared/pokemonContext";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
-function usePokemonDetails() {
-  const {selectedPokemon, pokemonName} = usePokemon();
+const PokemonDetailsContext = createContext();
+
+export const usePokemonDetailsContext = () => useContext(PokemonDetailsContext);
+
+export function PokemonDetailsProvider({ children }) {
   const [dataPokemonDetails, setDataPokemonDetails] = useState([]);
   const [loadingPokemonDetails, setLoadingPokemonDetails] = useState(true);
   const [errorPokemonDetails, setErrorPokemonDetails] = useState(null);
@@ -15,7 +17,7 @@ function usePokemonDetails() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setDataPokemonDetails(data.results);
+        setDataPokemonDetails(data);
         setLoadingPokemonDetails(false);
       } catch (error) {
         setErrorPokemonDetails(error);
@@ -26,7 +28,9 @@ function usePokemonDetails() {
     fetchData();
   }, []);
 
-  return { dataPokemonDetails, loadingPokemonDetails, errorPokemonDetails };
+  return (
+    <PokemonDetailsContext.Provider value={{ dataPokemonDetails, loadingPokemonDetails, errorPokemonDetails }}>
+      {children}
+    </PokemonDetailsContext.Provider>
+  );
 }
-
-export default usePokemonDetails;

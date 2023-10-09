@@ -1,22 +1,22 @@
-import navigatePokemonName from '../components/useNavigate'
-import usePokemonName from '../getInformation/getFirstName'
+import usePokemonDetails from '../getInformation/getPokemonDetails'
 import ResposeDetailsPokemon from '../mocks/resultsPokemonDetails.json'
+import { usePokemon } from './pokemonContext'
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
 //     -Guardamos la info del nombre en una variable para pasarsela a la img y name
 //     -La demas info la sacamos del link extraido
 function PokemonDetailsPage() {
+    const {dataPokemonDetails} = usePokemonDetails();
     const pokemonDetailsId = ResposeDetailsPokemon.id
     const pokemonDetailsType = ResposeDetailsPokemon.types
     const pokemonDetailsHeight = ResposeDetailsPokemon.height
     const pokemonDetailsAbilities = ResposeDetailsPokemon.abilities
 
-    const {dataPokemonName} = usePokemonName();
-    const selectedPokemon = dataPokemonName[0] || {};
-    const navegate = navigatePokemonName(selectedPokemon.name);
+    const {selectedPokemon, pokemonName} = usePokemon();
+
 
     const back = () => {
-        console.log(selectedPokemon.name);
+        console.log(pokemonName, dataPokemonDetails);
     }
     
     return ( 
@@ -25,12 +25,12 @@ function PokemonDetailsPage() {
             onClick={back}>
                 X
             </button>
-            <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${selectedPokemon.name}.gif`} alt="pokemonImage" />
-            <h3>{selectedPokemon.name}</h3>
+            <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemonName}.gif`} alt="pokemonImage" />
+            <h3>{pokemonName}</h3>
             <div className="detailsContainer">
                 <ul>
                     <h4>Id:&nbsp;&nbsp;</h4>
-                    <p>{pokemonDetailsId}</p>
+                    <p>{dataPokemonDetails.id}</p>
                 </ul>
                 <ul>
                     <h4>Type:&nbsp;&nbsp;</h4>
