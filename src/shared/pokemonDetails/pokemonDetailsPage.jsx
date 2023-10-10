@@ -32,7 +32,9 @@ function PokemonDetailsPage() {
                 </ul>
                 <ul>
                     <h4>Type:&nbsp;&nbsp;</h4>
-                    {/* <p>{pokemonType}</p> */}
+                    {dataPokemonDetails && dataPokemonDetails.types.map((type, index) => (
+                        <p key={index}>{type.type.name}</p>
+                    ))}
                 </ul>
                 <ul>
                     <h4>Height:&nbsp;&nbsp;</h4>
@@ -41,6 +43,9 @@ function PokemonDetailsPage() {
                 <ul>
                     <div>
                         <h4>Habilities:</h4>
+                        {dataPokemonDetails && dataPokemonDetails.abilities.map((ability, index) => (
+                            <li key={index}>{ability.ability.name}</li>
+                        ))}
                         {/* <p>
                             {dataPokemonDetails.abilities.map(details =>
                                 <li key={details.ability.name}>{details.ability.name}</li>

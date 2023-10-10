@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import navigatePokemonName from "../../components/useNavigate";
+import navigatePokemonName from "../../components/hooks/useNavigate";
 import { usePokemon } from "../../components/hooks/pokemonContext";
 
 function Pokemon({ image, name }) {
