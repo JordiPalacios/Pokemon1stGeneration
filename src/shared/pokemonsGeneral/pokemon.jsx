@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import navigatePokemonName from "../../components/hooks/useNavigate";
 import { usePokemon } from "../../components/hooks/pokemonContext";
 
 function Pokemon({ image, name }) {
   const navegate = navigatePokemonName(name);
   const { pokemonName, setPokemonName, selectedPokemon, setSelectedPokemon } = usePokemon();
+  const [selected, setSelected] = useState(false);
 
   useEffect(() => {
     console.log(pokemonName);

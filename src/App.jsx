@@ -4,8 +4,8 @@ import Header from './shared/header'
 import PokemonDisplay from './shared/pokemonDisplay'
 import PokemonFeatures from './shared/pokemonDetails/pokemonFeatures'
 
-function App() {
 
+function App() {
   return (
     <>
       <div className='mainPage'>

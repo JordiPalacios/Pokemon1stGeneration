@@ -10,7 +10,7 @@ function usePokemonDetails() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName||'charmander'}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

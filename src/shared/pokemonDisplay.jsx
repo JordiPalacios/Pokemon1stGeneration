@@ -1,9 +1,18 @@
-import PokemonList from "./pokemonsGeneral/pokemonList";
+import Pokemon from "./pokemonsGeneral/pokemon.jsx";
+import usePokemonName from "../getInformation/getFirstName.jsx"
 
 function PokemonDisplay() {
+    const {dataPokemonName} = usePokemonName();
     return ( 
         <section className="pokemonDisplay">
-            <PokemonList />
+            {dataPokemonName.map((pokemon) => (
+                <Pokemon
+                    key={pokemon.name}
+                    name={pokemon.name}
+                    image={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}
+            />
+            ))}
+);
           </section>
      );
 }
