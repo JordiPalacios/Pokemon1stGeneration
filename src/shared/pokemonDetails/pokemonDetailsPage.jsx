@@ -1,5 +1,5 @@
-import { usePokemon } from '../../components/hooks/pokemonContext'
-import { usePokemonDetailsContext } from '../../components/hooks/pokemonDetailsContext'
+import { usePokemon } from '../../components/pokemonContext'
+import { usePokemonDetailsContext } from '../../components/pokemonDetailsContext'
 import { Link } from "react-router-dom";
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
@@ -28,9 +28,9 @@ function PokemonDetailsPage() {
                 </ul>
                 <ul>
                     <h4>Type:&nbsp;&nbsp;</h4>
-                    {/* {dataPokemonDetails && dataPokemonDetails.types.map((type, index) => (
+                    {dataPokemonDetails && dataPokemonDetails.types.map((type, index) => (
                         <p key={index}>{type.type.name}</p>
-                    ))} */}
+                    ))}
                 </ul>
                 <ul>
                     <h4>Height:&nbsp;&nbsp;</h4>
@@ -39,9 +39,9 @@ function PokemonDetailsPage() {
                 <ul>
                     <div>
                         <h4>Habilities:</h4>
-                        {/* {dataPokemonDetails && dataPokemonDetails.abilities.map((ability, index) => (
+                        {dataPokemonDetails && dataPokemonDetails.abilities.map((ability, index) => (
                             <li key={index}>{ability.ability.name}</li>
-                        ))} */}
+                        ))}
                      </div>
                 </ul>
             </div>

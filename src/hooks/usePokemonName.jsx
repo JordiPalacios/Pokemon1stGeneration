@@ -20,7 +20,7 @@ function usePokemonName() {
         setLoadingPokemonName(false);
       }
     };
-
+    
     fetchData();
   }, []);
 
