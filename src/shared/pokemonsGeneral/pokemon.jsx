@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import navigatePokemonName from "../../components/hooks/useNavigate";
 import { usePokemon } from "../../components/hooks/pokemonContext";
+import { Link } from "react-router-dom";
 
 function Pokemon({ image, name }) {
   const navegate = navigatePokemonName(name);
@@ -24,10 +25,12 @@ function Pokemon({ image, name }) {
 const isSelected = selectedPokemon === name;
 
   return (
-    <button onClick={handleClick}>
-      <img align="center" src={image} alt={name} />
-      <h3>{name}</h3>
-    </button>
+    <Link to={`/pokemon/${name}`}>
+      <button onClick={handleClick}>
+        <img align="center" src={image} alt={name} />
+        <h3>{name}</h3>
+      </button>
+    </Link>
   );
 }
 

@@ -1,5 +1,6 @@
 import { usePokemon } from '../../components/hooks/pokemonContext'
 import { usePokemonDetailsContext } from '../../components/hooks/pokemonDetailsContext'
+import { Link } from "react-router-dom";
 
 // Al hacer click en la imagen que se ejecute el url del pokemon
 //     -Guardamos la info del nombre en una variable para pasarsela a la img y name
@@ -13,9 +14,11 @@ function PokemonDetailsPage() {
 
     return ( 
         <div className="pokemonDetails"> 
-            <button>
-                X
-            </button>
+            <Link to={`/pokemon`}>
+                <button>
+                    X
+                </button>
+            </Link>
             <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemonName}.gif`} alt="pokemonImage" />
             <h3>{pokemonName}</h3>
             <div className="detailsContainer">

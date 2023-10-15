@@ -105,12 +105,12 @@ button {
   align-items: center;
   width: 300px;
   padding: 15px;
-  border: 1px solid var(--dark-bg); 
+  border: 1px solid var(--dark-bg);
 }
 
-.pokemonDetails button {
+.pokemonDetails button{
   position: relative;
-  left: 45%;
+  right: -125px;
   border: none;
   border-radius: 25%;
   transform: scale(1);

@@ -11,8 +11,11 @@ function App() {
       <div className='mainPage'>
         <Header />
         <main>
-          <PokemonDisplay />
-          <PokemonFeatures />
+          <Routes>
+            <Route path='/' element={<PokemonDisplay />} />
+            <Route path='/pokemon' element={<PokemonDisplay />} />
+            <Route path='/pokemon/:pokemonName'element={<PokemonFeatures />} />
+          </Routes>
         </main>
       </div>
     </>
