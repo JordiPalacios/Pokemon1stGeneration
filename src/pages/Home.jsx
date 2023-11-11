@@ -7,7 +7,6 @@ export const Home = () => {
 
     const handleSubmit = (event) => { 
       event.preventDefault()
-      console.log({query})
     }
   
     const handleChange = (event) => {
@@ -18,7 +17,7 @@ export const Home = () => {
 
       return ( 
         <>
-            <header className='header'>
+            <header className='mainPage'>
               <img src="src\assets\img\pokemon.png" alt="pokemonLogo" />
               <h1>Generation 1</h1>
               <h2>151 Pokémon</h2>
@@ -28,7 +27,7 @@ export const Home = () => {
               </form>
               {error && <p className="error">{error}</p>}
             </header>
-            <main>
+            <main className="PokemonListContainer">
                 <PokemonList />
             </main>
         </>

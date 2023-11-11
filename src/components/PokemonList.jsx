@@ -8,7 +8,7 @@ export const PokemonList = () => {
 
     return (
     <>
-        <div className="pokemonDisplay">
+        <div className="pokemonList">
             {pokemons.map(pokemon => <PokemonCard pokemon={pokemon} key={pokemon.name}/>)}
         </div>
     </>

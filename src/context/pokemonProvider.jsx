@@ -29,7 +29,6 @@ export const PokemonProvider = ({children}) => {
         
         setPokemons(pokemonNameResults)
         setLoading(false)
-        console.log(pokemonNameResults)
     }
 
     // Call specific Pokemon by name

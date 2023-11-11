@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { PokemonContext } from '../context/pokemonContext'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Loader } from '../components'
 import { firstUpperCase } from '../FunctionsJS/FunctionsJS'
 
@@ -21,45 +21,53 @@ export const PokemonDetails = () => {
 
     useEffect(() => {
       fetchPokemon(pokemonName)
-      console.log(pokemonName)
     }, [])
 
   return (
-    <main className="containerPokemonDetails">
+    <main>
         {
             loading ? (
                 <Loader />
             ) : (
                 <>
-                    <div className="PokemonDetailsImg">
-                        <img align="center"
-                        src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}
-                        alt={pokemon.name} />
-                    </div>
-                    <div className='PokemonDetailsText'>
-                        <h3>{firstUpperCase(pokemon.name)}</h3>
-                        <ul>
-                            <h4>Id:&nbsp;&nbsp;</h4>
-                            <p>{pokemon.id}</p>
-                        </ul>
-                        {/* <ul>
-                            <h4>Type:&nbsp;&nbsp;</h4>
-                            {dataPokemonDetails && dataPokemonDetails.types.map((type, index) => (
-                                <p key={index}>{type.type.pokemonName}</p>
-                            ))}
-                        </ul> */}
-                        <ul>
-                            <h4>Height:&nbsp;&nbsp;</h4>
-                            <p>{pokemon.height}</p>
-                        </ul>
-                        {/* <ul>
+                    <div className="PokemonDetailsContainer">
+                        <div className="PokemonDetailsCard">
+                            <Link to={`/pokemon`}>
+                                <button>
+                                    X
+                                </button>
+                            </Link>
                             <div>
-                                <h4>Habilities:</h4>
-                                {dataPokemonDetails && dataPokemonDetails.abilities.map((ability, index) => (
-                                    <li key={index}>{ability.ability.name}</li>
-                                ))}
+                                <img align="center"
+                                src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}
+                                alt={pokemon.name} />
                             </div>
-                        </ul> */}
+                            <div className='PokemonDetailsText'>
+                                <h3>{firstUpperCase(pokemon.name)}</h3>
+                                <ul>
+                                    <h4>Id:&nbsp;&nbsp;</h4>
+                                    <p>{pokemon.id}</p>
+                                </ul>
+                                <ul>
+                                    <h4>Type:&nbsp;&nbsp;</h4>
+                                    {pokemon.types.map((type, index)=> (
+                                        <p key={index}>{firstUpperCase(type.type.name)}</p>
+                                        ))}
+                                </ul>
+                                <ul>
+                                    <h4>Height:&nbsp;&nbsp;</h4>
+                                    <p>{pokemon.height}</p>
+                                </ul>
+                                <ul>
+                                    <div>
+                                        <h4>Habilities:</h4>
+                                        {pokemon.abilities.map((ability, index) => (
+                                            <li key={index}>{firstUpperCase(ability.ability.name)}</li>
+                                            ))}
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </>
             )

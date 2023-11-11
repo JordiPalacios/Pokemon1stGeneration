@@ -5,7 +5,7 @@ export const PageNotFound = () => {
         <div className="urlNotFound">
             <img src="src\assets\img\snorlax.png" alt="Snorlax"/>
             <h1>Error... Pokemon Not Foud</h1>
-            <Link to={`/pokemon`}>
+            <Link to={`/`}>
                 <button>Go Home</button>
             </Link>
         </div>
