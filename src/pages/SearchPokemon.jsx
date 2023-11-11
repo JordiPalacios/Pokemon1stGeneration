@@ -29,16 +29,25 @@ export const SearchPokemon = () => {
         }
     }
     
-      const handleChange = (event) => {
-        const newQuery = event.target.value
-        if (newQuery.startsWith(' ') | /^[0-9]/.test(newQuery)) return
-        setQuery(newQuery)
-      }
+    const handleChange = (event) => {
+    const newQuery = event.target.value
+    if (newQuery.startsWith(' ') | /^[0-9]/.test(newQuery)) return
+    setQuery(newQuery)
+    }
+
+    const handleClick = () => {
+        pokemonNavigate('/')
+    }
 
     return (
         <>
             <header className='mainPage'>
-                <img src="src\assets\img\pokemon.png" alt="pokemonLogo" />
+                <button 
+                className="backButton"
+                onClick={handleClick}>
+                <img src="src\assets\img\International_Pokémon_logo.svg" alt="pokemonLogo" 
+                />
+                </button>
                 <h1>Generation 1</h1>
                 <h2>151 Pokémon</h2>
                 <form className='form' onSubmit={handleSubmit}>
@@ -51,7 +60,7 @@ export const SearchPokemon = () => {
                 <p className="searchedPokemon">
                     <span><b>{filteredPokemons.length}</b> pokemons have been found</span>
                 </p>
-                <div className="PokemonListContainer">
+                <div className="pokemonListContainer">
                     <div className="pokemonList">
                         {filteredPokemons.map(pokemon => <PokemonCard pokemon={pokemon} key={pokemon.id} />)}
                     </div>

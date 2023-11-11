@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const PokemonCard = ({ pokemon }) => {
   return (
     <Link to={`/pokemon/${pokemon.name}`}>
-        <div className='PokemonCard'>
+        <div className='pokemonCard'>
             <button>
                 <img 
                 align="center"

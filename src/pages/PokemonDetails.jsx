@@ -30,8 +30,8 @@ export const PokemonDetails = () => {
                 <Loader />
             ) : (
                 <>
-                    <div className="PokemonDetailsContainer">
-                        <div className="PokemonDetailsCard">
+                    <div className="pokemonDetailsContainer">
+                        <div className="pokemonDetailsCard">
                             <Link to={`/pokemon`}>
                                 <button>
                                     X
@@ -42,7 +42,7 @@ export const PokemonDetails = () => {
                                 src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}
                                 alt={pokemon.name} />
                             </div>
-                            <div className='PokemonDetailsText'>
+                            <div className='pokemonDetailsText'>
                                 <h3>{firstUpperCase(pokemon.name)}</h3>
                                 <ul>
                                     <h4>Id:&nbsp;&nbsp;</h4>

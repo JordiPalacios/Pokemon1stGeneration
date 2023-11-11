@@ -1,0 +1,5 @@
+import './main.css'
+import './home_search.css'
+import './pokemonDetails.css'
+import './loader.css'
+import './pageNotFound.css'

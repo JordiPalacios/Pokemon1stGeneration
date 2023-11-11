@@ -1,0 +1,99 @@
+/* Home Page */
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.mainPage img {
+  filter: drop-shadow(8px 8px 15px);
+  margin: 5px;
+  padding: 2px;
+}
+
+.mainPage h1,h2 {
+  margin: 5px;
+  padding: 2px;
+}
+
+.backButton {
+  border: none;
+  transform: scale(1);
+  transition: transform .75s ease, transform .75s ease;
+}
+
+.backButton:hover {
+  transform: scale(1.25);
+}
+  
+.form {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.form input {
+  background-color: var(--white-bg);
+  color: var(--dark-bg);
+  padding: 5px;
+  margin: 5px;
+}
+
+.form button {
+  border: 1px solid var(--dark-bg);
+  border-radius: 10%;
+  transition: background .3s ease-in-out, background .3s ease-in-out,
+  transform .5s ease-in-out, transform .5s ease-in-out;
+}
+
+.form button:hover {
+  background: var(--white-bg-2);
+  transform: scale(1.25);
+}
+
+.error {
+  color: red;
+  font-style: bold;
+}
+
+.pokemonListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+}
+
+.pokemonList button {
+  border: 1px solid var(--dark-bg);
+  transform: scale(1);
+  transition: background .3s ease-in-out, background .3s ease-in-out,
+  transform .3s ease-in-out, transform .3s ease-in-out;
+}
+
+.pokemonList button:hover {
+  background: var(--white-bg-2);
+  transform: scale(1.2);
+}
+
+.pokemonList {
+  display: grid;
+  width: 100%;
+  max-width: 950px;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  grid-gap: 5px 20px;
+  padding: 5px;
+}
+
+.pokemonList button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5%;
+}
+
+.pokemonList img {
+width: 200px;
+height: 200px;
+filter: drop-shadow(2px 2px 2px);
+}
