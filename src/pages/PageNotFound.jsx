@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function UrlNotFound() {
+export const PageNotFound = () => {
     return ( 
         <div className="urlNotFound">
             <img src="src\assets\img\snorlax.png" alt="Snorlax"/>
@@ -11,5 +11,3 @@ function UrlNotFound() {
         </div>
      );
 }
-
-export default UrlNotFound;

@@ -1,11 +1,11 @@
-import PokemonDetailsPage from "./pokemonDetailsPage";
+// import PokemonDetailsPage from "./pokemonDetailsPage";
 
-function PokemonFeatures() {
-    return ( 
-        <section>
-            <PokemonDetailsPage />
-        </section>
-     );
-}
+// function PokemonFeatures() {
+//     return ( 
+//         <section>
+//             <PokemonDetailsPage />
+//         </section>
+//      );
+// }
 
-export default PokemonFeatures;
+// export default PokemonFeatures;
