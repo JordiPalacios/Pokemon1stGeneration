@@ -28,6 +28,10 @@ export const Home = () => {
     pokemonNavigate('/')
   }
 
+  const goToFavouritesPage = () => {
+    pokemonNavigate('/favourite')
+  }
+
   return ( 
     <>
         <header className='mainPage'>
@@ -43,6 +47,7 @@ export const Home = () => {
               <button type='submit'>Search</button>
           </form>
           {error && <p className="error"><b>{error}</b></p>}
+          <button onClick={goToFavouritesPage}>Favourites</button>
         </header>
         <main className="pokemonListContainer">
             <PokemonList />

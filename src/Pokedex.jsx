@@ -1,11 +1,14 @@
 import { PokedexRouter } from './PokedexRouter'
+import { PokemonFavouriteProvider } from './context/pokemonFavouriteProvider';
 import { PokemonProvider } from './context/pokemonProvider';
 
 function Pokedex() {
   return (
     <>
       <PokemonProvider>
-        <PokedexRouter />
+        <PokemonFavouriteProvider>
+          <PokedexRouter />
+        </PokemonFavouriteProvider>
       </PokemonProvider>
     </>
   );

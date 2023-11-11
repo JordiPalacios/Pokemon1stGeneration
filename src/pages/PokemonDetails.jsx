@@ -3,6 +3,7 @@ import { PokemonContext } from '../context/pokemonContext'
 import { Link, useParams } from 'react-router-dom'
 import { Loader } from '../components'
 import { firstUpperCase } from '../FunctionsJS/FunctionsJS'
+import { PokemonFavouriteContext } from '../context/pokemonFavouriteContext'
 
 export const PokemonDetails = () => {
     const { getPokemonByName } = useContext(PokemonContext)
@@ -11,6 +12,15 @@ export const PokemonDetails = () => {
     const [pokemon, setPokemon] = useState({})
 
     const { pokemonName } = useParams()
+    const {pokemonFavourite, toggleFavouritePokemon} = useContext(PokemonFavouriteContext);
+    const favouriteState = {
+      favourite: '★',
+      notFavourite: '☆'
+    }
+  
+    const handleClick = () => {   
+      toggleFavouritePokemon(pokemon.name)
+    } 
 
     //Request details about the Pokemon selected
     const fetchPokemon = async name => {
@@ -37,6 +47,13 @@ export const PokemonDetails = () => {
                                     X
                                 </button>
                             </Link>
+
+
+                            <div>
+                              <button onClick={handleClick}> {pokemonFavourite[pokemon.name] ? favouriteState.favourite : favouriteState.notFavourite} </button>                    
+                            </div>
+
+
                             <div>
                                 <img align="center"
                                 src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}

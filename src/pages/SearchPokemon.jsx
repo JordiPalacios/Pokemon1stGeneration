@@ -49,7 +49,7 @@ export const SearchPokemon = () => {
                 />
                 </button>
                 <h1>Generation 1</h1>
-                <h2>151 Pokémon</h2>
+                <h2>151 Pokémons</h2>
                 <form className='form' onSubmit={handleSubmit}>
                     <input onChange={handleChange} value={query} name='query' placeholder='Charmander, Blastoise, Venasaur...' />
                     <button type='submit'>Search</button>
@@ -58,7 +58,7 @@ export const SearchPokemon = () => {
                 </header>
             <div className="searchContainer">
                 <p className="searchedPokemon">
-                    <span><b>{filteredPokemons.length}</b> pokemons have been found</span>
+                    <span><b>{filteredPokemons.length}</b> Pokémons have been found</span>
                 </p>
                 <div className="pokemonListContainer">
                     <div className="pokemonList">
