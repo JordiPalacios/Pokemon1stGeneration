@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home, PageNotFound, PokemonDetails, SearchPokemon} from './pages';
-import { Navegation } from "./components/Pavigation";
+import { Navegation } from "./components/Navigation";
 
 export const PokedexRouter = () => {
     return (
