@@ -1,13 +1,22 @@
 import React from "react"
 import { useQuery } from "../hooks/useQuery"
 import { PokemonList } from "../components"
+import { useNavigate } from "react-router-dom"
 
 export const Home = () => {
     const {query, setQuery, error} = useQuery()
+    const pokemonNavigate = useNavigate()
 
     const handleSubmit = (event) => { 
       event.preventDefault()
-    }
+      if (query.trim() === '') {
+        pokemonNavigate('/')
+      } else {
+        pokemonNavigate('/search', {
+          state: query
+        })
+      }
+      }
   
     const handleChange = (event) => {
       const newQuery = event.target.value
