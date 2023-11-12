@@ -39,6 +39,10 @@ export const SearchPokemon = () => {
         pokemonNavigate('/')
     }
 
+    const goToFavouritesPage = () => {
+        pokemonNavigate('/favourite')
+      }
+
     return (
         <>
             <header className='mainPage'>
@@ -54,6 +58,7 @@ export const SearchPokemon = () => {
                     <input onChange={handleChange} value={query} name='query' placeholder='Charmander, Blastoise, Venasaur...' />
                     <button type='submit'>Search</button>
                 </form>
+                <button className="favouritePokemonsButton" onClick={goToFavouritesPage}>Favourites ★</button>
                 {error && <p className="error">{error}</p>}
                 </header>
             <div className="searchContainer">

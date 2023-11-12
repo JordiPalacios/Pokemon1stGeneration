@@ -46,8 +46,8 @@ export const Home = () => {
               <input onChange={handleChange} value={query} name='query' placeholder='Charmander, Blastoise, Venasaur...' />
               <button type='submit'>Search</button>
           </form>
+          <button className="favouritePokemonsButton" onClick={goToFavouritesPage}>Favourites ★</button>
           {error && <p className="error"><b>{error}</b></p>}
-          <button onClick={goToFavouritesPage}>Favourites</button>
         </header>
         <main className="pokemonListContainer">
             <PokemonList />

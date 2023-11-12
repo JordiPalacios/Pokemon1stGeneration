@@ -42,18 +42,16 @@ export const PokemonDetails = () => {
                 <>
                     <div className="pokemonDetailsContainer">
                         <div className="pokemonDetailsCard">
-                            <Link to={`/pokemon`}>
-                                <button>
-                                    X
-                                </button>
-                            </Link>
-
-
-                            <div>
-                              <button onClick={handleClick}> {pokemonFavourite[pokemon.name] ? favouriteState.favourite : favouriteState.notFavourite} </button>                    
+                            <div className="pokemonDetailsButton">
+                                <Link to={`/pokemon`}>
+                                    <button>
+                                        X
+                                    </button>
+                                </Link>
+                                <div className='favouritePokemon'>
+                                    <button onClick={handleClick}> {pokemonFavourite[pokemon.name] ? favouriteState.favourite : favouriteState.notFavourite} </button>                    
+                                </div>
                             </div>
-
-
                             <div>
                                 <img align="center"
                                 src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`}

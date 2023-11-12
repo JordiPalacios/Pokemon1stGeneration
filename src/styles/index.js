@@ -1,5 +1,5 @@
 import './main.css'
-import './home_search.css'
+import './home_search_favourite.css'
 import './pokemonDetails.css'
 import './loader.css'
 import './pageNotFound.css'

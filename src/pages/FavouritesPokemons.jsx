@@ -39,6 +39,7 @@ export const FavouritesPokemons = () => {
                 </button>
                 <h1>Generation 1</h1>
                 <h2>151 Pokémon</h2>
+                <button className="homePokemonsButton" onClick={handleClick}>Home Page</button>
                 </header>
             <div className="searchContainer">
                 <p className="searchedPokemon">
