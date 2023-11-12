@@ -52,7 +52,7 @@ export const SearchPokemon = () => {
                 />
                 </button>
                 <h1>Generation 1</h1>
-                <h2>151 Pokémons</h2>
+                <h2>{pokemons.length} Pokémons</h2>
                 <form className='form' onSubmit={handleSubmit}>
                     <input onChange={handleChange} value={query} name='query' placeholder='Charmander, Blastoise, Venasaur...' />
                     <button type='submit'>Search</button>

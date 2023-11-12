@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useQuery } from "../hooks/useQuery"
 import { PokemonList } from "../components"
 import { useNavigate } from "react-router-dom"
+import { PokemonContext } from "../context/pokemonContext"
 
 export const Home = () => {
   const {query, setQuery, error} = useQuery()
   const pokemonNavigate = useNavigate()
+  const {pokemons} = useContext(PokemonContext)
 
   const handleSubmit = (event) => { 
     event.preventDefault()
@@ -41,7 +43,7 @@ export const Home = () => {
             <img src="src\assets\img\International_Pokémon_logo.svg" alt="pokemonLogo" />
           </button>
           <h1>Generation 1</h1>
-          <h2>151 Pokémon</h2>
+          <h2>{pokemons.length} Pokémon</h2>
           <form className='form' onSubmit={handleSubmit}>
               <input onChange={handleChange} value={query} name='query' placeholder='Charmander, Blastoise, Venasaur...' />
               <button type='submit'>Search</button>
