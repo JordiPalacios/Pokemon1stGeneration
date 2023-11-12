@@ -48,7 +48,7 @@ export const SearchPokemon = () => {
                 <button 
                 className="backButton"
                 onClick={handleClick}>
-                <img src="src\assets\img\International_Pokémon_logo.svg" alt="pokemonLogo" 
+                <img src="src/assets/img/pokemonLogo.svg" alt="pokemonLogo" 
                 />
                 </button>
                 <h1>Generation 1</h1>
