@@ -57,7 +57,10 @@ export const SearchPokemon = () => {
                     <input onChange={handleChange} value={query} name='query' placeholder='Charmander, Blastoise, Venasaur...' />
                     <button type='submit'>Search</button>
                 </form>
+                <div className="buttonsContainer">
                 <button className="favouritePokemonsButton" onClick={goToFavouritesPage}>Favourites ★</button>
+                <button className="homePokemonsButton" onClick={handleClick}>Home Page</button>
+                </div>
                 {error && <p className="error">{error}</p>}
                 </header>
             <div className="searchContainer">

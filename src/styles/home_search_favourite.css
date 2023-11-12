@@ -91,6 +91,12 @@
   background: none;
 }
 
+.buttonsContainer {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 10px;
+}
+
 .favouritePokemon {
   display: flex;
   flex-direction: column;
