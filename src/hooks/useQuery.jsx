@@ -22,6 +22,8 @@ export function useQuery() {
 
         if (query.match(/\d/)) {
             setError(`Cannot search for a Pokémon with a number`)
+        } else if (query.match(/[\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/)) {
+            setError(`Cannot search for a Pokémon with a special character`)
         } else {
             setError(null)
         }
