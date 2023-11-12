@@ -9,7 +9,8 @@
   flex-direction: column;
   align-items: center;
   width: 350px;
-  padding: 15px;
+  margin: 10px;
+  padding: 10px;
   border: 1px solid var(--dark-bg);
 }
 
@@ -35,15 +36,16 @@
 
 .pokemonDetailsButton button {
   border: none;
-  transition: background .3s ease-in-out, background .3s ease-in-out,
-  transform .3s ease-in-out, transform .3s ease-in-out;
+  background: none;
+  transition: transform .3s ease-in-out, transform .3s ease-in-out;
 }
 
 .pokemonDetailsButton button:hover {
-  transform: scale(1.75);
+  transform: scale(2);
 }
 
 .favouritePokemon button {
+  background: none;
   transition: transform .3s ease-in-out, transform .3s ease-in-out;
 }
 .favouritePokemon button:hover {
@@ -71,4 +73,10 @@
 .pokemonDetailsText :is(li,ul,h2,h3,h4,p) {
   margin: 1px;
   padding: 1px;
+}
+
+@media only screen and (max-width:800px) {
+  .pokemonDetailsCard {
+    width: 300px;
+  }
 }

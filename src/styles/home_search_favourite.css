@@ -21,7 +21,6 @@
 
 .backButton {
   border: none;
-  transform: scale(1);
   transition: transform .75s ease, transform .75s ease;
 }
 
@@ -120,4 +119,26 @@
 width: 200px;
 height: 200px;
 filter: drop-shadow(2px 2px 2px);
+}
+
+@media only screen and (max-width:800px) {
+  .backButton {
+    transform: scale(.75);
+    transition: transform .75s ease, transform .75s ease;
+  }
+  
+  .backButton:hover {
+    transform: scale(1);
+  }
+
+  .pokemonCard {
+    transform: scale(0.9);
+    transition: background .5s ease-in-out, background .5s ease-in-out,
+    transform .5s ease-in-out, transform .5s ease-in-out;
+  }
+  
+  .pokemonCard:hover {
+    background: var(--white-bg-2);
+    transform: scale(1.05);
+  }
 }
