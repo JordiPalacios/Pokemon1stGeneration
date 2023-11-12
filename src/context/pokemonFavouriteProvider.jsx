@@ -12,7 +12,6 @@ export const PokemonFavouriteProvider = ({ children }) => {
             return newPokemonFavourite;
         })
     }
-console.log(pokemonFavourite)
 
   return (
     <PokemonFavouriteContext.Provider

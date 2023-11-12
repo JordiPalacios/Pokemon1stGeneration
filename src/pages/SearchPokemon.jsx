@@ -8,7 +8,6 @@ import { useQuery } from "../hooks/useQuery";
 
 export const SearchPokemon = () => {
     const location = useLocation()
-    console.log(location)
     const {pokemons} = useContext(PokemonContext)
 
     //We filter pokemons by words - Searching always in LowerCase

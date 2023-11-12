@@ -19,11 +19,6 @@ export const FavouritesPokemons = () => {
     favouritePokemons.includes(pokemon.name)    
     )
 
-    console.log(pokemons)
-    console.log(pokemonFavourite)
-    console.log(favouritePokemons)
-    console.log(pokemonsFavouriteNames)
-
     const handleClick = () => {
         pokemonNavigate('/')
     }
