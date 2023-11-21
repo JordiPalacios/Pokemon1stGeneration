@@ -9,10 +9,10 @@ export const PokedexRouter = () => {
         <Routes>
             <Route path="/" element={<Navegation />}>
                 <Route index element={<Home/>} />
-                <Route path="/pokemon" element={<Home/>} />
+                <Route path="pokemon" element={<Home/>} />
                 <Route path="pokemon/:pokemonName" element={<PokemonDetails />} />
                 <Route path="search" element={<SearchPokemon />} />
-                <Route path="/favourite" element={<FavouritesPokemons />} />
+                <Route path="favourite" element={<FavouritesPokemons />} />
             </Route>
 
             <Route path="*" element={<PageNotFound />} />
