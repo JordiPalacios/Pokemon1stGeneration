@@ -26,6 +26,8 @@ export const PokemonProvider = ({children}) => {
             return data;
         })
         const pokemonNameResults = await Promise.all(pokemonName)
+
+        console.log(pokemonNameResults)
         
         setPokemons(pokemonNameResults)
         setLoading(false)
