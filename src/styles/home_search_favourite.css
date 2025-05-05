@@ -19,13 +19,20 @@
   padding: 2px;
 }
 
+.mainPage a {
+  text-decoration: underline;
+  color: var(--white-bg);
+  font-weight: bold;
+}
+
 .backButton {
   border: none;
+  background: none;
   transition: transform .75s ease, transform .75s ease;
 }
 
 .backButton:hover {
-  transform: scale(1.25);
+  transform: scale(1.025);
 }
   
 .form {
@@ -47,16 +54,14 @@
   border: 1px solid var(--dark-bg);
   border-radius: 10%;
   filter: none;
-  transition: background .3s ease-in-out, background .3s ease-in-out,
-  transform .5s ease-in-out, transform .5s ease-in-out,
+  transition: transform .5s ease-in-out, transform .5s ease-in-out,
   filter .25s ease-in-out, filter .25s ease-in-out;
 }
 
 .form button:hover, 
 .favouritePokemonsButton:hover,
 .homePokemonsButton:hover {
-  background: var(--white-bg-2);
-  transform: scale(1.25);
+  transform: scale(1.15);
   filter: drop-shadow(2px 2px 2px);
 }
 
@@ -76,14 +81,18 @@
   display: grid;
   margin: 10px;
   padding: 5px;
-  border: 1px solid var(--dark-bg);
+  border: 1px solid var(--white);
   transition: background .5s ease-in-out, background .5s ease-in-out,
   transform .5s ease-in-out, transform .5s ease-in-out;
 }
 
+.pokemonCard h3 {
+  color: var(--white-bg);
+}
+
 .pokemonCard:hover {
-  background: var(--white-bg-2);
-  transform: scale(1.15);
+  background: #4A4A4A;
+  transform: scale(1.025);
 }
 
 .pokemonCard button {
@@ -105,7 +114,7 @@
 
 .favouritePokemon button {
   transform: scale(1.75);
-  transition: transform .3s ease-in-out, transform .3s ease-in-out;
+  transition: transform .5s ease-in-out, transform .5s ease-in-out;
 }
 
 .favouritePokemon button:hover {
@@ -132,19 +141,14 @@ filter: drop-shadow(2px 2px 2px);
     transform: scale(.75);
     transition: transform .75s ease, transform .75s ease;
   }
-  
-  .backButton:hover {
-    transform: scale(1);
-  }
-
+    
   .pokemonCard {
     transform: scale(0.9);
-    transition: background .5s ease-in-out, background .5s ease-in-out,
-    transform .5s ease-in-out, transform .5s ease-in-out;
+    transition: transform .5s ease-in-out, transform .5s ease-in-out;
   }
-  
-  .pokemonCard:hover {
-    background: var(--white-bg-2);
-    transform: scale(1.05);
+
+  .backButton:hover,
+  .pokemonCard:hover{
+    transform: scale(1);
   }
 }
