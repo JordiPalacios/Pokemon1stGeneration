@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Home, PageNotFound, PokemonDetails, SearchPokemon} from './pages';
 import { Navegation } from "./components/Navigation";
 import { FavouritesPokemons } from "./pages/FavouritesPokemons";
@@ -15,7 +15,8 @@ export const PokedexRouter = () => {
                 <Route path="favourite" element={<FavouritesPokemons />} />
             </Route>
 
-            <Route path="*" element={<PageNotFound />} />
+            <Route path='*' element={<Navigate to ="/" replace />} />
+            {/* <Route path='*' element={<PageNotFound />} /> */}
         </Routes>
     );
 };

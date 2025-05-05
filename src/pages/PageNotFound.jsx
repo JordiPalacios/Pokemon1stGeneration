@@ -9,5 +9,5 @@ export const PageNotFound = () => {
                 <button>Go Home</button>
             </Link>
         </div>
-     );
+    );
 }

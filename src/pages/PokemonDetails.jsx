@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { PokemonContext } from '../context/pokemonContext'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Loader } from '../components'
 import { firstUpperCase } from '../FunctionsJS/FunctionsJS'
 import { PokemonFavouriteContext } from '../context/pokemonFavouriteContext'
@@ -9,9 +9,9 @@ export const PokemonDetails = () => {
     const { getPokemonByName } = useContext(PokemonContext)
 
     const [loading, setLoading] = useState(true)
-    const [pokemon, setPokemon] = useState({})
+    // const [pokemon, setPokemon] = useState({})
 
-    const { pokemonName } = useParams()
+    // const { pokemonName } = useParams()
     const {pokemonFavourite, toggleFavouritePokemon} = useContext(PokemonFavouriteContext);
     const favouriteState = {
       favourite: '★',
@@ -22,16 +22,44 @@ export const PokemonDetails = () => {
       toggleFavouritePokemon(pokemon.name)
     } 
 
-    //Request details about the Pokemon selected
-    const fetchPokemon = async name => {
-        const data = await getPokemonByName(name)
-        setPokemon(data)
-        setLoading(false)
-    }
+    // //Request details about the Pokemon selected
+    // const fetchPokemon = async name => {
+    //     const data = await getPokemonByName(name)
+    //     setPokemon(data)
+    //     setLoading(false)
+    // }
+
+    const { pokemonName } = useParams();
+    const navigate = useNavigate();
+    const [pokemon, setPokemon] = useState(null);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
-      fetchPokemon(pokemonName)
-    }, [])
+        const fetchPokemon = async () => {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
+            if (!response.ok) {
+            throw new Error("Pokemon not found");
+            }
+            const data = await response.json();
+            setPokemon(data);
+            setLoading(false);
+        } catch (err) {
+            setError(true);
+            setTimeout(() => navigate("/"), 3000); // Redirige al inicio después de 3 segundos
+        }
+        };
+
+        fetchPokemon();
+    }, [pokemonName, navigate]);
+
+    if (error) {
+        return <p>Pokémon not found. Redirecting to the homepage...</p>;
+    }
+
+    if (!pokemon) {
+        return <p>Loading...</p>;
+    }
 
   return (
     <main>
